@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trang Traiteur</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <header>
+    <h1>Bienvenue chez Trang Traiteur</h1>
+    <h2>Tél: 076 685 27 37</h2>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="index.html">Présentation</a></li>
+      <li><a href="entree.html">Nos entrées</a></li>
+      <li><a href="soupe.html">Nos soupes</a></li>
+      <li><a href="plat.html">Nos plats</a></li>
+      <li><a href="contact_commande.html">Contact/Commande</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <!-- ✅ Bloc récap commande (JS ONLY) -->
+    <section class="commande" aria-label="Votre commande">
+      <h2>Votre commande</h2>
+
+      <div class="commande-box">
+        <div id="commandeItems"></div>
+        <div id="commandeTotaux"></div>
+      </div>
+    </section>
+
+    <!-- ✅ Bloc coordonnées / livraison -->
+    <section class="livraison" aria-label="Adresse de livraison et coordonnées">
+      <h2>Adresse de livraison / coordonnées</h2>
+
+      <form class="livraison-form" action="#" method="post">
+        <div class="livraison-ligne-3">
+          <input
+            type="text"
+            name="nom"
+            placeholder="Votre nom, prénom"
+            autocomplete="name"
+            required
+          />
+
+          <input type="hidden" name="commande_json" id="commandeJson" />
+
+          <input
+            type="email"
+            name="email"
+            placeholder="Votre email"
+            autocomplete="email"
+            required
+          />
+
+          <input
+            type="tel"
+            name="telephone"
+            placeholder="Votre numéro de téléphone"
+            autocomplete="tel"
+            required
+          />
+        </div>
+
+        <textarea
+          name="adresse"
+          placeholder="Adresse de livraison"
+          rows="6"
+          required
+        ></textarea>
+
+        <button type="submit" class="btn-valider">
+          Valider ma commande
+        </button>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- ✅ JS à la fin -->
+  <script src="panier.js"></script>
+</body>
+
+<footer></footer>
+</html>
