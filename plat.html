@@ -41,13 +41,97 @@
 
         <main>
 
-            <article>
-                <p>Bienvenue sur le site de Trang Traiteur</p>
-            </article>
+            <div class="Nourriture">
+
+                <!-- ✅ ARTICLE 1 -->
+                <article class="Entree"
+                    data-id="banh-cuon"
+                    data-name="Banh Cuon"
+                    data-price="12.00">
+                    <h3>Bahn Cuon</h3>
+                    <img src="img/banhCuon.jpeg" alt="Bahn Cuon">
+                    <p>
+                    Bánh cuốn (literally "rolled cake") is a delicate Vietnamese dish consisting of paper-thin,
+                    steamed rice flour sheets typically filled with savory ingredients.
+                    </p>
+
+                    <div class="ajout-panier">
+                    <div class="prix-plat">Prix : <strong>12.00 CHF</strong></div>
+
+                    <div class="ligne-quantite">
+                        <label>
+                        Quantité :
+                        <input type="number" class="qte" min="1" value="1">
+                        </label>
+
+                        <button type="button" class="btn-ajouter">Ajouter au panier</button>
+                    </div>
+                    </div>
+
+                </article>
+
+                <!-- ✅ ARTICLE 2 -->
+                <article class="Entree"
+                    data-id="banh-xeo"
+                    data-name="Crêpe vietnamienne (Bánh Xèo)"
+                    data-price="15.00">
+                    <h3>Crêpe vietnamienne</h3>
+                    <img src="img/crepeVietnamienne.jpg" alt="Crêpe vietnamienne">
+                    <p>
+                    La crêpe vietnamienne, ou Bánh Xèo, est une galette jaune vif et croustillante...
+                    </p>
+
+                    <div class="ajout-panier">
+                    <div class="prix-plat">Prix : <strong>12.00 CHF</strong></div>
+
+                    <div class="ligne-quantite">
+                        <label>
+                        Quantité :
+                        <input type="number" class="qte" min="1" value="1">
+                        </label>
+
+                        <button type="button" class="btn-ajouter">Ajouter au panier</button>
+                    </div>
+                    </div>
+
+                </article>
+
+                <!-- ✅ ARTICLE 3 -->
+                <article class="Entree"
+                    data-id="pho"
+                    data-name="Pho"
+                    data-price="18.00">
+                    <h3>Pho</h3>
+                    <img src="img/pho.jpg" alt="Pho">
+                    <p>
+                    Pho is Vietnam's national comfort food, a fragrant noodle soup featuring a savory broth...
+                    </p>
+
+                    <div class="ajout-panier">
+                    <div class="prix-plat">Prix : <strong>12.00 CHF</strong></div>
+
+                    <div class="ligne-quantite">
+                        <label>
+                        Quantité :
+                        <input type="number" class="qte" min="1" value="1">
+                        </label>
+
+                        <button type="button" class="btn-ajouter">Ajouter au panier</button>
+                    </div>
+                    </div>
+
+                </article>
+
+                <article class="Entree">
+                    <h3>Pâtes de riz accompagné de porc grillé</h3>
+
+                </article>
+
+            </div>
 
         </main>
 
-        <script src="panier.js"></script>
+        <script src="js/panier.js"></script>
     </body>
 
     <footer>
