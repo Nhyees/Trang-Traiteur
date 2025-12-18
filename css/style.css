@@ -138,3 +138,346 @@ p {
   width: 60px;
   text-align: center;
 }
+
+
+/* =========================
+   PAGE COMMANDE (contact_commande.html)
+   ========================= */
+
+/* =========================
+   PAGE COMMANDE UNIQUEMENT
+   ========================= */
+
+/* Layout desktop */
+.page-commande main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+
+  display: grid;
+  gap: 20px;
+}
+
+.page-commande .commande-box {
+  width: 100%;
+}
+
+
+/* Mobile */
+@media (max-width: 900px) {
+  .page-commande main {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Date + heure */
+.page-commande .livraison-ligne-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+@media (max-width: 900px) {
+  .page-commande .livraison-ligne-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Labels */
+.page-commande .field span {
+  display: block;
+  font-size: 14px;
+  margin: 6px 0 6px;
+  opacity: 0.85;
+}
+
+
+
+
+/* Titres */
+.commande h2,
+.livraison h2 {
+  margin: 0 0 12px 0;
+  font-size: 26px;
+}
+
+/* Carte */
+.commande-box,
+.livraison-form {
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.12);
+  border-radius: 14px;
+  padding: 16px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+/* Lignes panier */
+.commande-ligne {
+  display: grid;
+  grid-template-columns: 160px 1fr 48px 90px;
+  gap: 12px;
+  align-items: center;
+  padding: 10px 0;
+}
+
+@media (max-width: 900px) {
+  .commande-ligne {
+    grid-template-columns: 150px 1fr 44px 80px;
+  }
+}
+
+/* Colonne quantité (+ / input / -) */
+.commande-qte {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.qte-commande {
+  width: 50px;
+  padding: 6px 8px;
+  border: 1px solid rgba(0,0,0,0.18);
+  border-radius: 10px;
+  text-align: center;
+  font-size: 16px;
+}
+
+/* Boutons + / - */
+.btn-moins,
+.btn-plus {
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.18);
+  background: #f4f4f4;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.btn-moins:hover,
+.btn-plus:hover {
+  background: #eaeaea;
+}
+
+/* Nom du plat : 2 lignes max, lisible */
+.page-commande .commande-nom {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;   /* max 2 lignes */
+  -webkit-box-orient: vertical;
+
+  line-height: 1.3;
+  font-size: 15px;
+}
+
+
+/* Bouton supprimer */
+.commande-supprimer {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.18);
+  background: #fff2f2;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.commande-supprimer:hover {
+  background: #ffe1e1;
+}
+
+/* Prix */
+.commande-prix {
+  text-align: right;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Séparateur */
+.commande-sep {
+  border: none;
+  border-top: 1px solid rgba(0,0,0,0.12);
+  margin: 12px 0;
+}
+
+/* Totaux */
+.commande-totaux .ligne-total {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  font-size: 16px;
+}
+
+.commande-totaux .total-final {
+  border-top: 1px dashed rgba(0,0,0,0.2);
+  margin-top: 6px;
+  padding-top: 12px;
+  font-size: 18px;
+  font-weight: 800;
+}
+
+/* Formulaire livraison */
+.livraison-form .livraison-ligne-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 900px) {
+  .livraison-form .livraison-ligne-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+.livraison-form input,
+.livraison-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.18);
+  font-size: 16px;
+  outline: none;
+}
+
+.livraison-form input:focus,
+.livraison-form textarea:focus {
+  border-color: rgba(0,0,0,0.35);
+}
+
+/* Bouton valider */
+.btn-valider {
+  margin-top: 12px;
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 14px;
+  border: 0;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  background: #2f7d32;   /* vert */
+  color: white;
+}
+
+.btn-valider:hover {
+  filter: brightness(0.95);
+}
+
+/* Date + heure sur la même ligne (page commande uniquement) */
+.page-commande .livraison-ligne-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* Chaque label en colonne (texte au-dessus du champ) */
+.page-commande .livraison-ligne-2 .field {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Mobile : retour en colonne */
+@media (max-width: 900px) {
+  .page-commande .livraison-ligne-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Empêche la carte commande de changer de largeur */
+.page-commande .commande {
+  width: 100%;
+}
+
+.page-commande .commande-box {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Grille stable pour chaque ligne */
+.page-commande .commande-ligne {
+  grid-template-columns: 160px minmax(0, 1fr) 48px 90px;
+}
+
+/* Coupe proprement les noms trop longs */
+.page-commande .commande-nom {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Même largeur pour COMMANDE et CONTACT */
+.page-commande .commande,
+.page-commande .livraison {
+  width: 100%;
+}
+
+/* Les deux cartes ont exactement le même comportement */
+.page-commande .commande-box,
+.page-commande .livraison-form {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+
+
+/* Bloc "Ajouter au panier" collé en bas */
+.Nourriture .ajout-panier {
+  margin-top: auto;     /* 🔑 LA CLÉ */
+  padding-top: 12px;
+  display: flex;
+  gap: 8px;
+}
+
+/* Quantité + input sur une ligne */
+.Nourriture .ajout-panier label {
+  display: flex;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+/* Champ quantité plus compact */
+.Nourriture .ajout-panier .qte {
+  width: 48px;
+  padding: 4px 6px;
+  text-align: center;
+}
+
+/* Bloc ajout panier en colonne */
+.Nourriture .ajout-panier {
+  margin-top: auto;
+  padding-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Prix au-dessus */
+.Nourriture .prix-plat {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Ligne quantité + bouton */
+.Nourriture .ligne-quantite {
+  display: flex;
+
+  gap: 8px;
+}
+
+/* Quantité */
+.Nourriture .ligne-quantite label {
+  display: flex;
+
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.Nourriture .ligne-quantite .qte {
+  width: 48px;
+  padding: 4px 6px;
+
+}
