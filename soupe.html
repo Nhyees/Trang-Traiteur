@@ -1,141 +1,156 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Trang Traiteur</title>
-        <link rel="stylesheet" href="css/style.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Traiteur</title>
+    <link rel="stylesheet" href="css/style.css">
 
 
-    </head>
+</head>
 
-    <body>
-        <header>
-            <h1>Bienvenue chez Trang Traiteur</h1>
-            <h2>Tél: 076 685 27 37</h2>
-        </header>
+<body>
+    <header>
+        <h1>Bienvenue chez Trang Traiteur</h1>
+        <h2>Tél: 076 685 27 37</h2>
+    </header>
 
-        <nav>
-            <ul>
-                <li>
-                    <a href="index.html">Présentation</a>
-                </li>
-                <li>
-                    <a href="entree.html">Nos entrées</a>
-                </li>
+    <nav>
+        <ul>
+            <li>
+                <a href="index.html">Présentation</a>
+            </li>
+            <li>
+                <a href="entree.html">Nos entrées</a>
+            </li>
 
-                <li>
-                    <a href="soupe.html">Nos soupes</a>
-                </li>
+            <li>
+                <a href="soupe.html">Nos soupes</a>
+            </li>
 
-                <li>
-                    <a href="plat.html">Nos plats</a>
-                </li>
+            <li>
+                <a href="plat.html">Nos plats</a>
+            </li>
 
-                <li>
-                    <a href="contact_commande.html">Contact/Commande</a>
-                </li>
-            </ul>
-        </nav>
+            <li>
+                <a href="contact_commande.html">Contact/Commande</a>
+            </li>
+        </ul>
+    </nav>
 
-        <main>
+    <main>
 
-            <div class="Nourriture">
+        <div class="Nourriture">
 
-                <!-- ✅ ARTICLE 1 -->
-                <article class="Entree"
-                    data-id="banh-cuon"
-                    data-name="Banh Cuon"
-                    data-price="12.00">
-                    <h3>Bahn Cuon</h3>
-                    <img src="img/banhCuon.jpeg" alt="Bahn Cuon">
-                    <p>
-                    Bánh cuốn (literally "rolled cake") is a delicate Vietnamese dish consisting of paper-thin,
-                    steamed rice flour sheets typically filled with savory ingredients.
-                    </p>
+            <article class="Soupe" data-id="pho" data-name="Pho" data-price="15.00">
+                <h3>Phở</h3>
+                <img src="img/pho.jpg" alt="Phở">
+                <p>Soupe vietnamienne traditionnelle : bouillon parfumé, nouilles de riz, viande et herbes.</p>
 
-                    <div class="ajout-panier">
-                    <div class="prix-plat">Prix : <strong>12.00 CHF</strong></div>
-
+                <div class="ajout-panier">
+                    <div class="prix-plat">Prix : <strong>15.00 CHF</strong></div>
                     <div class="ligne-quantite">
-                        <label>
-                        Quantité :
-                        <input type="number" class="qte" min="1" value="1">
-                        </label>
-
+                        <label>Quantité : <input type="number" class="qte" min="1" value="1"></label>
                         <button type="button" class="btn-ajouter">Ajouter au panier</button>
                     </div>
-                    </div>
+                </div>
+            </article>
 
-                </article>
+            <article class="Soupe" data-id="bun-bo-hue" data-name="Bun Bo Hue" data-price="15.00">
+                <h3>Bún bò Huế</h3>
+                <img src="img/bun_bo_hue.png" alt="Bún bò Huế">
+                <p>Soupe épicée de Huế : bouillon riche, vermicelles, bœuf et citronnelle.</p>
 
-                <!-- ✅ ARTICLE 2 -->
-                <article class="Entree"
-                    data-id="banh-xeo"
-                    data-name="Crêpe vietnamienne (Bánh Xèo)"
-                    data-price="15.00">
-                    <h3>Crêpe vietnamienne</h3>
-                    <img src="img/crepeVietnamienne.jpg" alt="Crêpe vietnamienne">
-                    <p>
-                    La crêpe vietnamienne, ou Bánh Xèo, est une galette jaune vif et croustillante...
-                    </p>
-
-                    <div class="ajout-panier">
-                    <div class="prix-plat">Prix : <strong>12.00 CHF</strong></div>
-
+                <div class="ajout-panier">
+                    <div class="prix-plat">Prix : <strong>15.00 CHF</strong></div>
                     <div class="ligne-quantite">
-                        <label>
-                        Quantité :
-                        <input type="number" class="qte" min="1" value="1">
-                        </label>
-
+                        <label>Quantité : <input type="number" class="qte" min="1" value="1"></label>
                         <button type="button" class="btn-ajouter">Ajouter au panier</button>
                     </div>
-                    </div>
+                </div>
+            </article>
 
-                </article>
+            <article class="Soupe" data-id="hu-tieu-nam-vang" data-name="Hu Tieu Nam Vang" data-price="15.00">
+                <h3>Hủ tiếu Nam Vang</h3>
+                <img src="img/soupe_nam_vang.jpg" alt="Hủ tiếu Nam Vang">
+                <p>Soupe cambodgienne aux nouilles, bouillon léger et garniture généreuse.</p>
 
-                <!-- ✅ ARTICLE 3 -->
-                <article class="Entree"
-                    data-id="pho"
-                    data-name="Pho"
-                    data-price="18.00">
-                    <h3>Pho</h3>
-                    <img src="img/pho.jpg" alt="Pho">
-                    <p>
-                    Pho is Vietnam's national comfort food, a fragrant noodle soup featuring a savory broth...
-                    </p>
-
-                    <div class="ajout-panier">
-                    <div class="prix-plat">Prix : <strong>12.00 CHF</strong></div>
-
+                <div class="ajout-panier">
+                    <div class="prix-plat">Prix : <strong>15.00 CHF</strong></div>
                     <div class="ligne-quantite">
-                        <label>
-                        Quantité :
-                        <input type="number" class="qte" min="1" value="1">
-                        </label>
-
+                        <label>Quantité : <input type="number" class="qte" min="1" value="1"></label>
                         <button type="button" class="btn-ajouter">Ajouter au panier</button>
                     </div>
+                </div>
+            </article>
+
+            <article class="Soupe" data-id="bun-rieu" data-name="Bun Rieu" data-price="15.00">
+                <h3>Bún riêu</h3>
+                <img src="img/TODO.jpg" alt="Bún riêu">
+                <p>Soupe de crabe vietnamienne : tomate, vermicelles, herbes et bouillon savoureux.</p>
+
+                <div class="ajout-panier">
+                    <div class="prix-plat">Prix : <strong>15.00 CHF</strong></div>
+                    <div class="ligne-quantite">
+                        <label>Quantité : <input type="number" class="qte" min="1" value="1"></label>
+                        <button type="button" class="btn-ajouter">Ajouter au panier</button>
                     </div>
+                </div>
+            </article>
 
-                </article>
+            <article class="Soupe" data-id="canh-chua" data-name="Canh Chua (poisson/crevettes)" data-price="15.00">
+                <h3>Canh chua</h3>
+                <img src="img/canh-chua.jpg" alt="Canh chua">
+                <p>Soupe aigre-douce vietnamienne, parfumée (tamarin, herbes, légumes).</p>
 
-                <article class="Entree">
-                    <h3>Pâtes de riz accompagné de porc grillé</h3>
+                <div class="ajout-panier">
+                    <div class="prix-plat">Prix : <strong>15.00 CHF</strong></div>
+                    <div class="ligne-quantite">
+                        <label>Quantité : <input type="number" class="qte" min="1" value="1"></label>
+                        <button type="button" class="btn-ajouter">Ajouter au panier</button>
+                    </div>
+                </div>
+            </article>
 
-                </article>
+            <article class="Soupe" data-id="canh-kho-qua" data-name="Canh Kho Qua" data-price="15.00">
+                <h3>Canh khổ qua</h3>
+                <img src="img/canh_kho_qua.png" alt="Canh khổ qua">
+                <p>Soupe au concombre amer, légère et traditionnelle.</p>
 
-            </div>
+                <div class="ajout-panier">
+                    <div class="prix-plat">Prix : <strong>15.00 CHF</strong></div>
+                    <div class="ligne-quantite">
+                        <label>Quantité : <input type="number" class="qte" min="1" value="1"></label>
+                        <button type="button" class="btn-ajouter">Ajouter au panier</button>
+                    </div>
+                </div>
+            </article>
 
-        </main>
+            <article class="Soupe" data-id="canh-ga-ac" data-name="Canh Ga Ac" data-price="15.00">
+                <h3>Canh gà ác</h3>
+                <img src="img/TODO.jpg" alt="Canh gà ác">
+                <p>Soupe de poulet noir, bouillon doux et réconfortant.</p>
 
-        <script src="js/panier.js"></script>
-    </body>
+                <div class="ajout-panier">
+                    <div class="prix-plat">Prix : <strong>15.00 CHF</strong></div>
+                    <div class="ligne-quantite">
+                        <label>Quantité : <input type="number" class="qte" min="1" value="1"></label>
+                        <button type="button" class="btn-ajouter">Ajouter au panier</button>
+                    </div>
+                </div>
+            </article>
 
-    <footer>
 
-    </footer>
+        </div>
+
+    </main>
+
+    <script src="js/panier.js"></script>
+</body>
+
+<footer>
+
+</footer>
 
 </html>

@@ -1,109 +1,109 @@
 // panier.js
 document.addEventListener("DOMContentLoaded", () => {
-  const STORAGE_KEY = "siteTraiteur_panier_v1";
+    const STORAGE_KEY = "siteTraiteur_panier_v1";
 
-  const itemsEl = document.getElementById("commandeItems");
-  const totalsEl = document.getElementById("commandeTotaux");
-  const formEl = document.querySelector(".livraison-form");
-  const hiddenJsonEl = document.getElementById("commandeJson");
+    const itemsEl = document.getElementById("commandeItems");
+    const totalsEl = document.getElementById("commandeTotaux");
+    const formEl = document.querySelector(".livraison-form");
+    const hiddenJsonEl = document.getElementById("commandeJson");
 
-  // ---------- Helpers ----------
-  const formatCHF = (n) => `${Number(n).toFixed(2)} CHF`;
+    // ---------- Helpers ----------
+    const formatCHF = (n) => `${Number(n).toFixed(2)} CHF`;
 
-  function escapeHtml(str) {
-    return String(str)
-      .replaceAll("&", "&amp;")
-      .replaceAll("<", "&lt;")
-      .replaceAll(">", "&gt;")
-      .replaceAll('"', "&quot;")
-      .replaceAll("'", "&#039;");
-  }
-
-  function loadCart() {
-    try {
-      const raw = localStorage.getItem(STORAGE_KEY);
-      const data = raw ? JSON.parse(raw) : [];
-      return Array.isArray(data) ? data : [];
-    } catch {
-      return [];
+    function escapeHtml(str) {
+        return String(str)
+            .replaceAll("&", "&amp;")
+            .replaceAll("<", "&lt;")
+            .replaceAll(">", "&gt;")
+            .replaceAll('"', "&quot;")
+            .replaceAll("'", "&#039;");
     }
-  }
 
-  function saveCart(cart) {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
-  }
+    function loadCart() {
+        try {
+            const raw = localStorage.getItem(STORAGE_KEY);
+            const data = raw ? JSON.parse(raw) : [];
+            return Array.isArray(data) ? data : [];
+        } catch {
+            return [];
+        }
+    }
 
-  function calcDeliveryFee(subtotal) {
-    if (subtotal <= 0) return 0;
-    return subtotal < 100 ? 10 : 0;
-  }
+    function saveCart(cart) {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(cart));
+    }
 
-  function calcTotals(cart) {
-    const subtotal = cart.reduce((sum, it) => sum + it.price * it.qty, 0);
-    const delivery = calcDeliveryFee(subtotal);
-    const total = subtotal + delivery;
-    return { subtotal, delivery, total };
-  }
+    function calcDeliveryFee(subtotal) {
+        if (subtotal <= 0) return 0;
+        return subtotal < 100 ? 10 : 0;
+    }
 
-  // ---------- Actions ----------
-  function removeItem(id) {
-    const cart = loadCart().filter((x) => x.id !== id);
-    saveCart(cart);
-    render();
-  }
+    function calcTotals(cart) {
+        const subtotal = cart.reduce((sum, it) => sum + it.price * it.qty, 0);
+        const delivery = calcDeliveryFee(subtotal);
+        const total = subtotal + delivery;
+        return { subtotal, delivery, total };
+    }
 
-  function setQty(id, qty) {
-    const cart = loadCart();
-    const item = cart.find((x) => x.id === id);
-    if (!item) return;
+    // ---------- Actions ----------
+    function removeItem(id) {
+        const cart = loadCart().filter((x) => x.id !== id);
+        saveCart(cart);
+        render();
+    }
 
-    const newQty = Math.max(0, parseInt(qty, 10) || 0);
-    item.qty = newQty;
+    function setQty(id, qty) {
+        const cart = loadCart();
+        const item = cart.find((x) => x.id === id);
+        if (!item) return;
 
-    // si qty = 0 -> on enlève l'article
-    const cleaned = cart.filter((x) => x.qty > 0);
-    saveCart(cleaned);
-    render();
-  }
+        const newQty = Math.max(0, parseInt(qty, 10) || 0);
+        item.qty = newQty;
 
-  // (utile depuis les pages plats/entrées)
-  function addItem({ id, name, price, qty }) {
-    if (!id || !name) return;
+        // si qty = 0 -> on enlève l'article
+        const cleaned = cart.filter((x) => x.qty > 0);
+        saveCart(cleaned);
+        render();
+    }
 
-    const p = Number(price);
-    const q = parseInt(qty, 10);
+    // (utile depuis les pages plats/entrées)
+    function addItem({ id, name, price, qty }) {
+        if (!id || !name) return;
 
-    if (!Number.isFinite(p) || p <= 0) return;
-    if (!Number.isFinite(q) || q <= 0) return;
+        const p = Number(price);
+        const q = parseInt(qty, 10);
 
-    const cart = loadCart();
-    const found = cart.find((x) => x.id === id);
+        if (!Number.isFinite(p) || p <= 0) return;
+        if (!Number.isFinite(q) || q <= 0) return;
 
-    if (found) found.qty += q;
-    else cart.push({ id, name, price: p, qty: q });
+        const cart = loadCart();
+        const found = cart.find((x) => x.id === id);
 
-    saveCart(cart);
-    render();
-  }
+        if (found) found.qty += q;
+        else cart.push({ id, name, price: p, qty: q });
 
-  // ---------- Render ----------
-  function render() {
-    // Si on n'est pas sur la page commande, itemsEl/totalsEl n'existent pas => on sort.
-    if (!itemsEl || !totalsEl) return;
+        saveCart(cart);
+        render();
+    }
 
-    const cart = loadCart();
+    // ---------- Render ----------
+    function render() {
+        // Si on n'est pas sur la page commande, itemsEl/totalsEl n'existent pas => on sort.
+        if (!itemsEl || !totalsEl) return;
 
-    // items
-    itemsEl.innerHTML = "";
-    if (cart.length === 0) {
-      itemsEl.innerHTML = `<p style="margin:0;">(Panier vide)</p>`;
-    } else {
-      for (const item of cart) {
-        const row = document.createElement("div");
-        row.className = "commande-ligne";
-        row.dataset.itemId = String(item.id);
+        const cart = loadCart();
 
-        row.innerHTML = `
+        // items
+        itemsEl.innerHTML = "";
+        if (cart.length === 0) {
+            itemsEl.innerHTML = `<p style="margin:0;">(Panier vide)</p>`;
+        } else {
+            for (const item of cart) {
+                const row = document.createElement("div");
+                row.className = "commande-ligne";
+                row.dataset.itemId = String(item.id);
+
+                row.innerHTML = `
           <div class="commande-qte">
             <button type="button" class="btn-moins" aria-label="Diminuer la quantité">−</button>
 
@@ -125,33 +125,33 @@ document.addEventListener("DOMContentLoaded", () => {
           <div class="commande-prix">${(item.price * item.qty).toFixed(2)}</div>
         `;
 
-        // -
-        row.querySelector(".btn-moins").addEventListener("click", () => {
-          setQty(item.id, item.qty - 1);
-        });
+                // -
+                row.querySelector(".btn-moins").addEventListener("click", () => {
+                    setQty(item.id, item.qty - 1);
+                });
 
-        // +
-        row.querySelector(".btn-plus").addEventListener("click", () => {
-          setQty(item.id, item.qty + 1);
-        });
+                // +
+                row.querySelector(".btn-plus").addEventListener("click", () => {
+                    setQty(item.id, item.qty + 1);
+                });
 
-        // taper une quantité
-        row.querySelector(".qte-commande").addEventListener("change", (e) => {
-          setQty(item.id, e.target.value);
-        });
+                // taper une quantité
+                row.querySelector(".qte-commande").addEventListener("change", (e) => {
+                    setQty(item.id, e.target.value);
+                });
 
-        // supprimer
-        row.querySelector(".commande-supprimer").addEventListener("click", () => {
-          removeItem(item.id);
-        });
+                // supprimer
+                row.querySelector(".commande-supprimer").addEventListener("click", () => {
+                    removeItem(item.id);
+                });
 
-        itemsEl.appendChild(row);
-      }
-    }
+                itemsEl.appendChild(row);
+            }
+        }
 
-    // totals
-    const { subtotal, delivery, total } = calcTotals(cart);
-    totalsEl.innerHTML = `
+        // totals
+        const { subtotal, delivery, total } = calcTotals(cart);
+        totalsEl.innerHTML = `
       <hr class="commande-sep" />
       <div class="commande-totaux">
         <div class="ligne-total">
@@ -168,63 +168,91 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       </div>
     `;
-  }
+    }
 
-  // ---------- Form submit ----------
-  if (formEl) {
-    formEl.addEventListener("submit", (e) => {
-      const cart = loadCart();
-      if (cart.length === 0) {
-        e.preventDefault();
-        alert("Votre panier est vide. Ajoutez au moins un article avant de valider.");
-        return;
-      }
+    // ---------- Form submit ----------
+    if (formEl) {
+        formEl.addEventListener("submit", (e) => {
+            e.preventDefault(); // ⛔ empêche le rechargement
 
-      const totals = calcTotals(cart);
-      const payload = {
-        createdAt: new Date().toISOString(),
-        currency: "CHF",
-        items: cart,
-        totals,
-      };
+            const cart = loadCart();
+            if (cart.length === 0) {
+                alert("Votre panier est vide. Ajoutez au moins un article.");
+                return;
+            }
 
-      if (hiddenJsonEl) hiddenJsonEl.value = JSON.stringify(payload);
+            const dateLiv = document.getElementById("dateLivraison")?.value || "";
+            const heureLiv = document.getElementById("heureLivraison")?.value || "";
+            const message = document.getElementById("messageClient")?.value || "";
+
+            const totals = calcTotals(cart);
+
+            const payload = {
+                createdAt: new Date().toISOString(),
+                currency: "CHF",
+                livraison: {
+                    date: dateLiv,
+                    heure: heureLiv,
+                    message: message
+                },
+                items: cart,
+                totals
+            };
+
+            // stocke la commande (temporaire, pour debug)
+            console.log("📦 COMMANDE ENVOYÉE :", payload);
+
+            if (hiddenJsonEl) {
+                hiddenJsonEl.value = JSON.stringify(payload);
+            }
+
+            // ✅ message de confirmation
+            const confirmation = document.getElementById("confirmationMessage");
+            if (confirmation) confirmation.style.display = "block";
+
+            // ✅ optionnel : vider le panier APRÈS confirmation
+            localStorage.removeItem("siteTraiteur_panier_v1");
+            render();
+
+            // optionnel : reset formulaire
+            formEl.reset();
+        });
+    }
+
+
+    // ---------- Pages menu : boutons "Ajouter au panier" ----------
+    document.querySelectorAll(".btn-ajouter").forEach((btn) => {
+        btn.addEventListener("click", () => {
+            const article = btn.closest("article");
+            if (!article) return;
+
+            const id = article.dataset.id;
+            const name = article.dataset.name;
+            const price = Number(article.dataset.price);
+
+            const qteInput = article.querySelector(".qte");
+            const qty = qteInput ? parseInt(qteInput.value, 10) : 1;
+
+            if (!id || !name || !Number.isFinite(price) || price <= 0) {
+                alert("Prix ou informations manquantes pour cet article.");
+                return;
+            }
+
+            addItem({ id, name, price, qty });
+
+            btn.textContent = "Ajouté ✓";
+            btn.disabled = true;
+            setTimeout(() => {
+                btn.textContent = "Ajouter au panier";
+                btn.disabled = false;
+            }, 800);
+        });
     });
-  }
 
-  // ---------- Pages menu : boutons "Ajouter au panier" ----------
-  document.querySelectorAll(".btn-ajouter").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const article = btn.closest("article");
-      if (!article) return;
+    // ---------- Init ----------
+    render();
 
-      const id = article.dataset.id;
-      const name = article.dataset.name;
-      const price = Number(article.dataset.price);
-
-      const qteInput = article.querySelector(".qte");
-      const qty = qteInput ? parseInt(qteInput.value, 10) : 1;
-
-      if (!id || !name || !Number.isFinite(price) || price <= 0) {
-        alert("Prix ou informations manquantes pour cet article.");
-        return;
-      }
-
-      addItem({ id, name, price, qty });
-
-      btn.textContent = "Ajouté ✓";
-      btn.disabled = true;
-      setTimeout(() => {
-        btn.textContent = "Ajouter au panier";
-        btn.disabled = false;
-      }, 800);
-    });
-  });
-
-  // ---------- Init ----------
-  render();
-
-  // pour tester vite dans la console
-  window.TraiteurCart = { loadCart, saveCart, addItem, removeItem, setQty, render };
+    // pour tester vite dans la console
+    window.TraiteurCart = { loadCart, saveCart, addItem, removeItem, setQty, render };
 });
 

@@ -1,176 +1,170 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Trang Traiteur</title>
-        <link rel="stylesheet" href="css/style.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Traiteur</title>
+    <link rel="stylesheet" href="css/style.css">
 
 
-    </head>
+</head>
 
-    <body>
-        <header>
-            <h1>Bienvenue chez Trang Traiteur</h1>
-            <h2>Tél: 076 685 27 37</h2>
-        </header>
+<body>
+    <header>
+        <h1>Bienvenue chez Trang Traiteur</h1>
+        <h2>Tél: 076 685 27 37</h2>
+    </header>
 
-        <nav>
-            <ul>
-                <li>
-                    <a href="index.html">Présentation</a>
-                </li>
-                <li>
-                    <a href="entree.html">Nos entrées</a>
-                </li>
+    <nav>
+        <ul>
+            <li>
+                <a href="index.html">Présentation</a>
+            </li>
+            <li>
+                <a href="entree.html">Nos entrées</a>
+            </li>
 
-                <li>
-                    <a href="soupe.html">Nos soupes</a>
-                </li>
+            <li>
+                <a href="soupe.html">Nos soupes</a>
+            </li>
 
-                <li>
-                    <a href="plat.html">Nos plats</a>
-                </li>
+            <li>
+                <a href="plat.html">Nos plats</a>
+            </li>
 
-                <li>
-                    <a href="contact_commande.html">Contact/Commande</a>
-                </li>
-            </ul>
-        </nav>
+            <li>
+                <a href="contact_commande.html">Contact/Commande</a>
+            </li>
+        </ul>
+    </nav>
 
-        <main>
+    <main>
 
-            <div class="Nourriture">
-                
-                <!-- ✅ ARTICLE 1 -->
-                <article class="Entree"
-                    data-id="banh-cuon"
-                    data-name="Banh Cuon"
-                    data-price="12.00">
-                    <h3>Bahn Cuon</h3>
-                    <img src="img/banhCuon.jpeg" alt="Bahn Cuon">
-                    <p>
-                    Bánh cuốn (literally "rolled cake") is a delicate Vietnamese dish consisting of paper-thin,
-                    steamed rice flour sheets typically filled with savory ingredients.
-                    </p>
+        <div class="Nourriture">
 
-                    <div class="ajout-panier">
-                    <div class="prix-plat">Prix : <strong>12.00 CHF</strong></div>
+            <article class="Entree" data-id="goi-cuon" data-name="Gỏi cuốn ~ Rouleau d'été" data-price="3.50">
+                <h3>Gỏi cuốn ~ Rouleau d'été</h3>
+                <img src="img/goiCuon.jpg" alt="Gỏi cuốn">
+                <p>Rouleau d'été : crevettes/porc, vermicelles de riz, menthe et salade batavia.</p>
 
+                <div class="ajout-panier">
+                    <div class="prix-plat">Prix : <strong>3.50 CHF</strong></div>
                     <div class="ligne-quantite">
-                        <label>
-                        Quantité :
-                        <input type="number" class="qte" min="1" value="1">
-                        </label>
-
+                        <label>Quantité : <input type="number" class="qte" min="1" value="1"></label>
                         <button type="button" class="btn-ajouter">Ajouter au panier</button>
                     </div>
-                    </div>
+                </div>
+            </article>
 
-                </article>
+            <article class="Entree" data-id="bo-bia" data-name="Bo Bia" data-price="3.00">
+                <h3>Bò bía</h3>
+                <img src="img/TODO.jpg" alt="Bò bía">
+                <p>Rouleau vietnamien à la crêpe de riz, garni de légumes et herbes.</p>
 
-                <!-- ✅ ARTICLE 2 -->
-                <article class="Entree"
-                    data-id="banh-xeo"
-                    data-name="Crêpe vietnamienne (Bánh Xèo)"
-                    data-price="15.00">
-                    <h3>Crêpe vietnamienne</h3>
-                    <img src="img/crepeVietnamienne.jpg" alt="Crêpe vietnamienne">
-                    <p>
-                    La crêpe vietnamienne, ou Bánh Xèo, est une galette jaune vif et croustillante...
-                    </p>
-
-                    <div class="ajout-panier">
-                    <div class="prix-plat">Prix : <strong>12.00 CHF</strong></div>
-
+                <div class="ajout-panier">
+                    <div class="prix-plat">Prix : <strong>3.00 CHF</strong></div>
                     <div class="ligne-quantite">
-                        <label>
-                        Quantité :
-                        <input type="number" class="qte" min="1" value="1">
-                        </label>
-
+                        <label>Quantité : <input type="number" class="qte" min="1" value="1"></label>
                         <button type="button" class="btn-ajouter">Ajouter au panier</button>
                     </div>
-                    </div>
+                </div>
+            </article>
 
-                </article>
+            <article class="Entree" data-id="cha-gio" data-name="Chả giò ~ Rouleau de printemps (1 piece)" data-price="1.50">
+                <h3>Chả giò ~ Rouleau de printemps (1 pièce)</h3>
+                <img src="img/rouleauDePrintemps.jpg" alt="Chả giò">
+                <p>Rouleau de printemps, farce porc & crevettes.</p>
 
-                <!-- ✅ ARTICLE 3 -->
-                <article class="Entree"
-                    data-id="pho"
-                    data-name="Pho"
-                    data-price="18.00">
-                    <h3>Pho</h3>
-                    <img src="img/pho.jpg" alt="Pho">
-                    <p>
-                    Pho is Vietnam's national comfort food, a fragrant noodle soup featuring a savory broth...
-                    </p>
-
-                    <div class="ajout-panier">
-                    <div class="prix-plat">Prix : <strong>12.00 CHF</strong></div>
-
+                <div class="ajout-panier">
+                    <div class="prix-plat">Prix : <strong>1.50 CHF</strong></div>
                     <div class="ligne-quantite">
-                        <label>
-                        Quantité :
-                        <input type="number" class="qte" min="1" value="1">
-                        </label>
-
+                        <label>Quantité : <input type="number" class="qte" min="1" value="1"></label>
                         <button type="button" class="btn-ajouter">Ajouter au panier</button>
                     </div>
+                </div>
+            </article>
+
+            <article class="Entree" data-id="nem-nuong" data-name="Nem nướng ~ Brochettes de porc grillé" data-price="7.50">
+                <h3>Nem nướng ~ Brochettes de porc grillé</h3>
+                <img src="img/rouleauPorc.jpg" alt="Nem nướng">
+                <p>Brochettes de porc grillé, parfumées et légèrement sucrées-salées.</p>
+
+                <div class="ajout-panier">
+                    <div class="prix-plat">Prix : <strong>7.50 CHF</strong></div>
+                    <div class="ligne-quantite">
+                        <label>Quantité : <input type="number" class="qte" min="1" value="1"></label>
+                        <button type="button" class="btn-ajouter">Ajouter au panier</button>
                     </div>
+                </div>
+            </article>
 
-                </article>
+            <article class="Entree" data-id="goi-ngo-sen" data-name="Gỏi ngó sen ~ Salade de lotus" data-price="13.00">
+                <h3>Gỏi ngó sen ~ Salade de lotus</h3>
+                <img src="img/salade_de_lotus.jpg" alt="Gỏi ngó sen">
+                <p>Salade de lotus</p>
 
-                <article class="Entree">
-                    <h3>Pâtes de riz accompagné de porc grillé</h3>
+                <div class="ajout-panier">
+                    <div class="prix-plat">Prix : <strong>13.00 CHF</strong></div>
+                    <div class="ligne-quantite">
+                        <label>Quantité : <input type="number" class="qte" min="1" value="1"></label>
+                        <button type="button" class="btn-ajouter">Ajouter au panier</button>
+                    </div>
+                </div>
+            </article>
 
-                </article>
+            <article class="Entree" data-id="goi-du-du" data-name="Goi Du Du" data-price="13.00">
+                <h3>Gỏi đu đủ ~ Salade de papaye</h3>
+                <img src="img/salade_de_papaye.jpg" alt="Gỏi đu đủ">
+                <p>Salade de papaye</p>
 
-                <article class="Entree">
-                    <h3>Cannes à sucres enrobées de crevettes</h3>
+                <div class="ajout-panier">
+                    <div class="prix-plat">Prix : <strong>13.00 CHF</strong></div>
+                    <div class="ligne-quantite">
+                        <label>Quantité : <input type="number" class="qte" min="1" value="1"></label>
+                        <button type="button" class="btn-ajouter">Ajouter au panier</button>
+                    </div>
+                </div>
+            </article>
 
-                </article>
+            <article class="Entree" data-id="banh-xeo" data-name="Banh Xeo" data-price="12.00">
+                <h3>Bánh xèo ~ Crêpe vietnamienne</h3>
+                <img src="img/crepeVietnamienne.jpg" alt="Bánh xèo">
+                <p>Crêpe vietnamienne croustillante, servie avec herbes et salade.</p>
 
-                <article class="Entree">
-                    <h3>Soupe de pâtes de riz, façon "Nam Vang"</h3>
+                <div class="ajout-panier">
+                    <div class="prix-plat">Prix : <strong>12.00 CHF</strong></div>
+                    <div class="ligne-quantite">
+                        <label>Quantité : <input type="number" class="qte" min="1" value="1"></label>
+                        <button type="button" class="btn-ajouter">Ajouter au panier</button>
+                    </div>
+                </div>
+            </article>
 
-                </article>
+            <article class="Entree" data-id="banh-trang-chien" data-name="Banh Trang Chien" data-price="7.00">
+                <h3>Bánh tráng chiên</h3>
+                <img src="img/TODO.jpg" alt="Bánh tráng chiên">
+                <p>Galette de riz frite, croustillante, à grignoter ou en entrée.</p>
 
-                <article class="Entree">
-                    <h3>Soupe de Nouilles aux raviolis</h3>
+                <div class="ajout-panier">
+                    <div class="prix-plat">Prix : <strong>7.00 CHF</strong></div>
+                    <div class="ligne-quantite">
+                        <label>Quantité : <input type="number" class="qte" min="1" value="1"></label>
+                        <button type="button" class="btn-ajouter">Ajouter au panier</button>
+                    </div>
+                </div>
+            </article>
 
-                </article>
 
-                <article class="Entree">
-                    <h3>Nouilles croustillantes au boeuf, crevettes, calamars & légumes</h3>
+        </div>
 
-                </article>
+    </main>
 
-                <article class="Entree">
-                    <h3>Crêpes de pâte de riz à la vapeur (au KG)</h3>
+    <script src="js/panier.js"></script>
+</body>
 
-                </article>
+<footer>
 
-                <article class="Entree">
-                    <h3>Salade de lotus, champignons, porc & crevette</h3>
-
-                </article>
-
-                <article class="Entree">
-                    <h3>Soupe au boeuf de huê</h3>
-
-                </article>
-
-            </div>
-
-        </main>
-
-        <script src="js/panier.js"></script>
-    </body>
-
-    <footer>
-
-    </footer>
+</footer>
 
 </html>

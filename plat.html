@@ -1,141 +1,200 @@
 <!DOCTYPE html>
 <html lang="fr">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Trang Traiteur</title>
-        <link rel="stylesheet" href="css/style.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Traiteur</title>
+    <link rel="stylesheet" href="css/style.css">
 
 
-    </head>
+</head>
 
-    <body>
-        <header>
-            <h1>Bienvenue chez Trang Traiteur</h1>
-            <h2>Tél: 076 685 27 37</h2>
-        </header>
+<body>
+    <header>
+        <h1>Bienvenue chez Trang Traiteur</h1>
+        <h2>Tél: 076 685 27 37</h2>
+    </header>
 
-        <nav>
-            <ul>
-                <li>
-                    <a href="index.html">Présentation</a>
-                </li>
-                <li>
-                    <a href="entree.html">Nos entrées</a>
-                </li>
+    <nav>
+        <ul>
+            <li>
+                <a href="index.html">Présentation</a>
+            </li>
+            <li>
+                <a href="entree.html">Nos entrées</a>
+            </li>
 
-                <li>
-                    <a href="soupe.html">Nos soupes</a>
-                </li>
+            <li>
+                <a href="soupe.html">Nos soupes</a>
+            </li>
 
-                <li>
-                    <a href="plat.html">Nos plats</a>
-                </li>
+            <li>
+                <a href="plat.html">Nos plats</a>
+            </li>
 
-                <li>
-                    <a href="contact_commande.html">Contact/Commande</a>
-                </li>
-            </ul>
-        </nav>
+            <li>
+                <a href="contact_commande.html">Contact/Commande</a>
+            </li>
+        </ul>
+    </nav>
 
-        <main>
+    <main>
 
-            <div class="Nourriture">
+        <div class="Nourriture">
 
-                <!-- ✅ ARTICLE 1 -->
-                <article class="Entree"
-                    data-id="banh-cuon"
-                    data-name="Banh Cuon"
-                    data-price="12.00">
-                    <h3>Bahn Cuon</h3>
-                    <img src="img/banhCuon.jpeg" alt="Bahn Cuon">
-                    <p>
-                    Bánh cuốn (literally "rolled cake") is a delicate Vietnamese dish consisting of paper-thin,
-                    steamed rice flour sheets typically filled with savory ingredients.
-                    </p>
+            <article class="Plat" data-id="bun-cha-ha-noi" data-name="Bun Cha Ha Noi" data-price="15.00">
+                <h3>Bún chả Hà Nội</h3>
+                <img src="img/TODO.jpg" alt="Bún chả Hà Nội">
+                <p>Vermicelles de riz servis avec porc grillé et sauce vietnamienne.</p>
 
-                    <div class="ajout-panier">
-                    <div class="prix-plat">Prix : <strong>12.00 CHF</strong></div>
-
+                <div class="ajout-panier">
+                    <div class="prix-plat">Prix : <strong>15.00 CHF</strong></div>
                     <div class="ligne-quantite">
-                        <label>
-                        Quantité :
-                        <input type="number" class="qte" min="1" value="1">
-                        </label>
-
+                        <label>Quantité : <input type="number" class="qte" min="1" value="1"></label>
                         <button type="button" class="btn-ajouter">Ajouter au panier</button>
                     </div>
-                    </div>
+                </div>
+            </article>
 
-                </article>
+            <article class="Plat" data-id="bun-nem-nuong" data-name="Bun Nem Nuong" data-price="15.00">
+                <h3>Bún nem nướng ~ Vermicelles de riz avec brochettes de porc grillé</h3>
+                <img src="img/TODO.jpg" alt="Bún nem nướng">
+                <p>Vermicelles de riz avec brochettes de porc grillé et herbes.</p>
 
-                <!-- ✅ ARTICLE 2 -->
-                <article class="Entree"
-                    data-id="banh-xeo"
-                    data-name="Crêpe vietnamienne (Bánh Xèo)"
-                    data-price="15.00">
-                    <h3>Crêpe vietnamienne</h3>
-                    <img src="img/crepeVietnamienne.jpg" alt="Crêpe vietnamienne">
-                    <p>
-                    La crêpe vietnamienne, ou Bánh Xèo, est une galette jaune vif et croustillante...
-                    </p>
-
-                    <div class="ajout-panier">
-                    <div class="prix-plat">Prix : <strong>12.00 CHF</strong></div>
-
+                <div class="ajout-panier">
+                    <div class="prix-plat">Prix : <strong>15.00 CHF</strong></div>
                     <div class="ligne-quantite">
-                        <label>
-                        Quantité :
-                        <input type="number" class="qte" min="1" value="1">
-                        </label>
-
+                        <label>Quantité : <input type="number" class="qte" min="1" value="1"></label>
                         <button type="button" class="btn-ajouter">Ajouter au panier</button>
                     </div>
-                    </div>
+                </div>
+            </article>
 
-                </article>
+            <article class="Plat" data-id="bun-thit-nuong" data-name="Bun Thit Nuong" data-price="15.00">
+                <h3>Bún thịt nướng</h3>
+                <img src="img/TODO.jpg" alt="Bún thịt nướng">
+                <p>Vermicelles de riz au porc grillé, accompagnés de crudités.</p>
 
-                <!-- ✅ ARTICLE 3 -->
-                <article class="Entree"
-                    data-id="pho"
-                    data-name="Pho"
-                    data-price="18.00">
-                    <h3>Pho</h3>
-                    <img src="img/pho.jpg" alt="Pho">
-                    <p>
-                    Pho is Vietnam's national comfort food, a fragrant noodle soup featuring a savory broth...
-                    </p>
-
-                    <div class="ajout-panier">
-                    <div class="prix-plat">Prix : <strong>12.00 CHF</strong></div>
-
+                <div class="ajout-panier">
+                    <div class="prix-plat">Prix : <strong>15.00 CHF</strong></div>
                     <div class="ligne-quantite">
-                        <label>
-                        Quantité :
-                        <input type="number" class="qte" min="1" value="1">
-                        </label>
-
+                        <label>Quantité : <input type="number" class="qte" min="1" value="1"></label>
                         <button type="button" class="btn-ajouter">Ajouter au panier</button>
                     </div>
+                </div>
+            </article>
+
+            <article class="Plat" data-id="mi-xao" data-name="Mi Xao" data-price="15.00">
+                <h3>Mì xào ~ Nouilles sautées aux légumes</h3>
+                <img src="img/mi_xau.jpg" alt="Mì xào">
+                <p>Nouilles sautées aux légumes.</p>
+
+                <div class="ajout-panier">
+                    <div class="prix-plat">Prix : <strong>15.00 CHF</strong></div>
+                    <div class="ligne-quantite">
+                        <label>Quantité : <input type="number" class="qte" min="1" value="1"></label>
+                        <button type="button" class="btn-ajouter">Ajouter au panier</button>
                     </div>
+                </div>
+            </article>
 
-                </article>
+            <article class="Plat" data-id="mien-xao" data-name="Mien Xao" data-price="15.00">
+                <h3>Miến xào</h3>
+                <img src="img/mien_xao.jpg" alt="Miến xào">
+                <p>Vermicelles sautés, parfumés, avec légumes.</p>
 
-                <article class="Entree">
-                    <h3>Pâtes de riz accompagné de porc grillé</h3>
+                <div class="ajout-panier">
+                    <div class="prix-plat">Prix : <strong>15.00 CHF</strong></div>
+                    <div class="ligne-quantite">
+                        <label>Quantité : <input type="number" class="qte" min="1" value="1"></label>
+                        <button type="button" class="btn-ajouter">Ajouter au panier</button>
+                    </div>
+                </div>
+            </article>
 
-                </article>
+            <article class="Plat" data-id="mi-xao-gion-bo-ga" data-name="Mi Xao Gion (Boeuf & Poulet)"
+                data-price="17.00">
+                <h3>Mì xào giòn (bœuf & poulet)</h3>
+                <img src="img/mi_xau_gion.jpg" alt="Mì xào giòn">
+                <p>Nouilles croustillantes, sautées avec bœuf & poulet.</p>
 
-            </div>
+                <div class="ajout-panier">
+                    <div class="prix-plat">Prix : <strong>17.00 CHF</strong></div>
+                    <div class="ligne-quantite">
+                        <label>Quantité : <input type="number" class="qte" min="1" value="1"></label>
+                        <button type="button" class="btn-ajouter">Ajouter au panier</button>
+                    </div>
+                </div>
+            </article>
 
-        </main>
+            <article class="Plat" data-id="com-chien-duong-chau" data-name="Com Chien Duong Chau" data-price="10.00">
+                <h3>Cơm chiên Dương Châu ~ Riz cantonais</h3>
+                <img src="img/com_chien_duong_chau.png" alt="Cơm chiên Dương Châu">
+                <p>Riz cantonais, sauté et parfumé.</p>
 
-        <script src="js/panier.js"></script>
-    </body>
+                <div class="ajout-panier">
+                    <div class="prix-plat">Prix : <strong>10.00 CHF</strong></div>
+                    <div class="ligne-quantite">
+                        <label>Quantité : <input type="number" class="qte" min="1" value="1"></label>
+                        <button type="button" class="btn-ajouter">Ajouter au panier</button>
+                    </div>
+                </div>
+            </article>
 
-    <footer>
+            <article class="Plat" data-id="com-chien-do-bien" data-name="Com Chien Do Bien" data-price="12.00">
+                <h3>Cơm chiên đồ biển</h3>
+                <img src="img/com_chien_do_bien.jpg" alt="Cơm chiên đồ biển">
+                <p>Riz frit aux fruits de mer, savoureux et généreux.</p>
 
-    </footer>
+                <div class="ajout-panier">
+                    <div class="prix-plat">Prix : <strong>12.00 CHF</strong></div>
+                    <div class="ligne-quantite">
+                        <label>Quantité : <input type="number" class="qte" min="1" value="1"></label>
+                        <button type="button" class="btn-ajouter">Ajouter au panier</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="Plat" data-id="rau-xao" data-name="Rau Xao" data-price="15.00">
+                <h3>Rau xào</h3>
+                <img src="img/rau_xao.jpg" alt="Rau xào">
+                <p>Légumes sautés, simples et délicieux.</p>
+
+                <div class="ajout-panier">
+                    <div class="prix-plat">Prix : <strong>15.00 CHF</strong></div>
+                    <div class="ligne-quantite">
+                        <label>Quantité : <input type="number" class="qte" min="1" value="1"></label>
+                        <button type="button" class="btn-ajouter">Ajouter au panier</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="Plat" data-id="rau-xao-thap-cam" data-name="Rau Xao Thap Cam" data-price="15.00">
+                <h3>Rau xào thập cẩm</h3>
+                <img src="img/rau_xao_thap_cam.jpg" alt="Rau xào thập cẩm">
+                <p>Mélange de légumes sautés, variés et croquants.</p>
+
+                <div class="ajout-panier">
+                    <div class="prix-plat">Prix : <strong>15.00 CHF</strong></div>
+                    <div class="ligne-quantite">
+                        <label>Quantité : <input type="number" class="qte" min="1" value="1"></label>
+                        <button type="button" class="btn-ajouter">Ajouter au panier</button>
+                    </div>
+                </div>
+            </article>
+
+
+
+        </div>
+
+    </main>
+
+    <script src="js/panier.js"></script>
+</body>
+
+<footer>
+
+</footer>
 
 </html>
